@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>IMC</title>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">        
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">   
+        <link rel="shortcut icon" type="imagem/png" href="icon/bmi.png">     
     </head>
     <body>
         <header>
@@ -16,17 +17,22 @@
 
         <main>
             <section class="principal conteiner">
-                <h1>Calcule seu IMC</h1>
+                <div class="cabecalho">
+                    <figure>
+                        <img src="icon/bmi.png" class="icon-size">
+                    </figure>
+                    <span class="titulo">Calcule seu IMC </span>
+                </div>
                 <fildset>
                     <div class="grupo">
                         <label for="peso">Peso:</label>
-                        <input type="range" name="pedo" id="peso" class="select-peso">
-                        <input type="text" class="view">
+                        <input type="range" name="peso" id="peso" class="select-peso">
+                        <input type="number" class="view">
                     </div>
                     <div class="grupo">
                         <label for="altura">Altura:</label>
                         <input type="range" name="altura" id="altura" class="select-altura">
-                        <input type="text" class="view">
+                        <input type="number" class="view">
                     </div>
                     <div class="grupo">
                         <button type="submit" class="btn">Calcular</button>
