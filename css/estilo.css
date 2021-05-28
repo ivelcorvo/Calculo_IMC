@@ -83,8 +83,8 @@ section.principal{
     margin-bottom: 10px;
 }
 
-.view{
-    width: 50px;
+.campo{
+    width: 100%;
     height: 30px;
 }
 
@@ -97,5 +97,11 @@ section.principal{
     margin-top: 20px; 
     border: none;
     cursor: pointer;
+}
+
+.result{
+    background-color: thistle;
+    margin: 20px;
+    padding: 10px;
 }
 

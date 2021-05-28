@@ -10,6 +10,7 @@
         <title>IMC</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css">   
         <link rel="shortcut icon" type="imagem/png" href="icon/bmi.png">     
+        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
         <header>
@@ -26,19 +27,22 @@
                 <fildset>
                     <div class="grupo">
                         <label for="peso">Peso:</label>
-                        <input type="range" name="peso" id="peso" class="select-peso">
-                        <input type="number" class="view">
+                        <!-- <input type="range" name="peso" id="peso" class="select-peso"> -->
+                        <input type="number" id="peso" name="peso" class="campo">
                     </div>
                     <div class="grupo">
                         <label for="altura">Altura:</label>
-                        <input type="range" name="altura" id="altura" class="select-altura">
-                        <input type="number" class="view">
+                        <!-- <input type="range" name="altura" id="altura" class="select-altura"> -->
+                        <input type="number" id="altura" name="altura" class="campo">
                     </div>
                     <div class="grupo">
-                        <button type="submit" class="btn">Calcular</button>
+                        <button id="btnCalculo" type="submit" class="btn">Calcular</button>
                     </div>                    
                 </fildset>
-            </section>
+
+                <div class="result "id="resultado">                
+                </div>
+            </section>            
         </main>
 
         <footer>            
