@@ -10,7 +10,6 @@
         <title>IMC</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css">   
         <link rel="shortcut icon" type="imagem/png" href="icon/bmi.png">     
-        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
         <header>
@@ -27,25 +26,62 @@
                 <fildset>
                     <div class="grupo">
                         <label for="peso">Peso:</label>
-                        <!-- <input type="range" name="peso" id="peso" class="select-peso"> -->
                         <input type="number" id="peso" name="peso" class="campo">
                     </div>
                     <div class="grupo">
                         <label for="altura">Altura:</label>
-                        <!-- <input type="range" name="altura" id="altura" class="select-altura"> -->
                         <input type="number" id="altura" name="altura" class="campo">
                     </div>
                     <div class="grupo">
-                        <button id="btnCalculo" type="submit" class="btn">Calcular</button>
+                        <input type="button" class="btn" id="btnCalculo" value="Calcular">
                     </div>                    
                 </fildset>
 
-                <div class="result "id="resultado">                
+                <div class="result "id="resultado">
+                              
                 </div>
             </section>            
         </main>
 
         <footer>            
         </footer>
+
+        <script>
+            var btnCalculo = document.getElementById("btnCalculo")
+            
+            function calculoIMC(){
+                var peso      = document.getElementById("peso").value;
+                var altura    = document.getElementById("altura").value;
+                var resultado = document.getElementById("resultado");
+                var imc;
+                var msg;
+            
+                if(altura !=="" && peso!==""){
+                    imc = (peso/(altura * altura)).toFixed(2);
+
+                    if(imc < 18.5){
+                        msg = 'Abaixo do Peso. Seu IMC é '+imc;
+                    }else if(imc>=18.5 && imc<=24.9){
+                        msg = 'Peso Normal. Seu IMC é '+imc;
+                    }else if(imc>=25 && imc<=29.9){
+                        msg = 'Sobrepeso. Seu IMC é '+imc;
+                    }else if(imc>=30 && imc<=34.9){
+                        msg = 'Obesidade Grau I. Seu IMC é '+imc;
+                    }else if(imc>=35 && imc<=39.9){
+                        msg = 'Obesidade Grau II. Seu IMC é '+imc;
+                    }else if(imc >= 40){
+                        msg = 'Obesidade grau III ou Mórbida. Seu IMC é '+imc;
+                    }
+                    
+                    resultado.textContent = msg;                    
+                }else{
+                    msg = "preencha os campos";
+                    resultado.textContent = "preencha os campos";
+                }
+            }
+            
+            btnCalculo.addEventListener("click", calculoIMC);
+        </script>
+
     </body>
 </html>
